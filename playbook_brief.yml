@@ -1,0 +1,16 @@
+---
+- name: Run cisco commands
+  hosts: 62.99.227.25
+  connection: local
+  gather_facts: false
+
+  tasks:
+
+    - name: get base information
+      ios_command:
+        commands:
+          - show version | include IOS
+          - show ip interface brief
+      register: output
+
+    - debug: var=output.stdout_lines
