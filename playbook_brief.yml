@@ -1,6 +1,6 @@
 ---
 - name: Run cisco commands
-  hosts: 62.99.227.25
+  hosts: 
   connection: local
   gather_facts: false
 
